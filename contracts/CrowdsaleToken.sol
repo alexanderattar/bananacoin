@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-import "zeppelin-solidity/contracts/StandardToken.sol";
+import "./zeppelin/StandardToken.sol";
 
 /*
  * Crowdsale Token contract
@@ -19,7 +19,7 @@ contract CrowdsaleToken is StandardToken {
   function () payable {
     createTokens(msg.sender);
   }
-  
+
   function createTokens(address recipient) payable {
     if (msg.value == 0) throw;
 
@@ -30,7 +30,7 @@ contract CrowdsaleToken is StandardToken {
 
     if (!wallet.send(msg.value)) throw;
   }
-  
+
   function getPrice() constant returns (uint result){
     return PRICE;
   }

@@ -29,6 +29,7 @@
     "request": "^2.76.0",
     "request-promise": "^4.1.1",
     "resource-router-middleware": "^0.5.1",
+    "truffle-default-builder": "^2.0.0",
     "uuid": "^2.0.3",
     "web3": "^0.16.0",
     "zeppelin-solidity": "0.0.11"

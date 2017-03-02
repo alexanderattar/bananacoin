@@ -2,8 +2,8 @@ pragma solidity ^0.4.0;
 
 import "./CrowdsaleToken.sol";
 import "./OrderPayment.sol";
-import {Factory, Target} from "zeppelin-solidity/contracts/Bounty.sol";
-import "zeppelin-solidity/contracts/Stoppable.sol";
+import {Factory, Target} from "./zeppelin/Bounty.sol";
+import "./zeppelin/Stoppable.sol";
 
 /*
  * Main BeatCoin Token contract
@@ -19,7 +19,7 @@ contract BeatCoin is CrowdsaleToken, OrderPayment, Target, Stoppable {
   uint public constant REGISTRATION_PRICE = 10000;
   uint public constant SONG_PRICE = 5000;
 
-  
+
   // constructor
   function BeatCoin()
     OrderPayment()

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.0;
 
-import "zeppelin-solidity/contracts/Ownable.sol";
+import "./zeppelin/Ownable.sol";
 
 /*
  * Order Payment contract helper
@@ -32,9 +32,9 @@ contract OrderPayment is Ownable {
   function completeOrder(string store, string item, address account) onlyOwner {
     Order order = orders[store][item];
     if (!order.exists) throw;
-    
+
     sendDeposit(order, account);
-    
+
     OrderCompleted(order.payer, store, item, order.value);
     delete orders[store][item];
   }
